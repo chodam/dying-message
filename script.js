@@ -152,6 +152,9 @@ function createNovelistView() {
   if (state.round === 1) ruleText = "각 항목에 명사 1개, 형용사 1개 총 2개씩 힌트를 채워주세요.";
   if (state.round === 2) ruleText = "각 항목에 타일을 딱 1개씩(종류 무관) 추가해주세요.";
   if (state.round === 3) ruleText = "각 항목에 타일을 딱 1개씩 추가하여, [형용사2+명사2] 세트가 맞도록 해주세요.";
+  
+  let draggedWordData = null; 
+  let selectedWord = null; 
 
   let html = `
     <div class="top-bar" style="margin-bottom: 2rem; align-items:flex-end;">
@@ -242,64 +245,59 @@ function createNovelistView() {
     });
   };
 
-  const wordTiles = div.querySelectorAll('.word-pool .word-tile');
-  wordTiles.forEach(tile => {
+  div.querySelectorAll('.word-pool .word-tile').forEach(tile => {
     tile.addEventListener('dragstart', (e) => {
-      if (tile.classList.contains('selected')) {
-         e.preventDefault();
-         return;
-      }
-      e.dataTransfer.setData('text/plain', JSON.stringify({text: tile.dataset.word, type: tile.dataset.type}));
+      if (tile.classList.contains('selected')) { e.preventDefault(); return; }
+      draggedWordData = { text: tile.dataset.word, type: tile.dataset.type };
+      e.dataTransfer.setData('text/plain', tile.dataset.word);
       e.dataTransfer.effectAllowed = 'copy';
-      state.selectedWord = null; 
+      selectedWord = null; 
       div.querySelectorAll('.word-pool .word-tile').forEach(t => t.style.boxShadow = '');
     });
 
     tile.addEventListener('click', (e) => {
       if (tile.classList.contains('selected')) return;
       div.querySelectorAll('.word-pool .word-tile').forEach(t => t.style.boxShadow = '');
-      e.target.style.boxShadow = '0 0 15px var(--highlight-color)';
-      state.selectedWord = { text: e.target.dataset.word, type: e.target.dataset.type };
+      tile.style.boxShadow = '0 0 15px var(--highlight-color)';
+      selectedWord = { text: tile.dataset.word, type: tile.dataset.type };
+      draggedWordData = null; 
     });
   });
 
-  const slots = div.querySelectorAll('.hint-slot');
-  slots.forEach(slot => {
+  div.querySelectorAll('.hint-slot').forEach(slot => {
     slot.addEventListener('dragover', (e) => {
-      e.preventDefault(); 
-      e.dataTransfer.dropEffect = 'copy';
+      e.preventDefault();
+      slot.style.borderColor = 'var(--highlight-color)';
     });
-
+    slot.addEventListener('dragleave', () => {
+      slot.style.borderColor = '#666';
+    });
     slot.addEventListener('drop', (e) => {
       e.preventDefault();
-      const rawData = e.dataTransfer.getData('text/plain');
-      if (!rawData) return;
-      try {
-        const droppedWord = JSON.parse(rawData);
-        const cat = slot.dataset.target;
-        let targetLen = state.round === 1 ? 2 : (state.round === 2 ? 3 : 4);
-        if (state.hints[cat].length >= targetLen) {
-          alert(`${state.round}라운드에는 한 항목당 최대 ${targetLen}개의 단어만 조합할 수 있습니다.`);
-          return;
-        }
-        state.hints[cat].push(droppedWord);
-        updateNovelistUI(); 
-      } catch(err) {
-        console.error('Invalid drop', err);
-      }
-    });
-
-    slot.addEventListener('click', (e) => {
-      if (!state.selectedWord) return;
+      slot.style.borderColor = '#666';
+      if (!draggedWordData) return;
       const cat = slot.dataset.target;
       let targetLen = state.round === 1 ? 2 : (state.round === 2 ? 3 : 4);
       if (state.hints[cat].length >= targetLen) {
         alert(`${state.round}라운드에는 한 항목당 최대 ${targetLen}개의 단어만 조합할 수 있습니다.`);
         return;
       }
-      state.hints[cat].push(state.selectedWord);
-      state.selectedWord = null;
-      updateNovelistUI(); 
+      state.hints[cat].push(draggedWordData);
+      draggedWordData = null;
+      updateNovelistUI();
+    });
+
+    slot.addEventListener('click', () => {
+      if (!selectedWord) return;
+      const cat = slot.dataset.target;
+      let targetLen = state.round === 1 ? 2 : (state.round === 2 ? 3 : 4);
+      if (state.hints[cat].length >= targetLen) {
+        alert(`${state.round}라운드에는 한 항목당 최대 ${targetLen}개의 단어만 조합할 수 있습니다.`);
+        return;
+      }
+      state.hints[cat].push(selectedWord);
+      selectedWord = null;
+      updateNovelistUI();
     });
   });
 

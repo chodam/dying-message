@@ -412,6 +412,15 @@ h1, h2, h3, .btn, .font-title {
   margin: 0 auto;
 }
 
+/* 소설가 화면 메인 영역 */
+.novelist-main-area {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  height: calc(100vh - 200px);
+  min-height: 500px;
+}
+
 .game-board .card {
   position: absolute;
   /* width/height/left/top will be set inline via JS percentage */
@@ -443,43 +452,53 @@ h1, h2, h3, .btn, .font-title {
 }
 
 /* 미디어 쿼리: 모바일 가로 모드 최적화 */
-@media screen and (max-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 550px) and (orientation: landscape) {
   .view {
-    padding: 1rem;
+    padding: 0.5rem;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .top-bar {
+    margin-bottom: 0.5rem !important;
   }
   .novelist-main-area {
     min-height: auto;
-    height: 100%;
+    height: calc(100vh - 80px); /* 헤더 제외 남은 공간 모두 사용 */
+    gap: 0.5rem;
   }
   .turn-indicator {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .instruction-text {
+    font-size: 0.8rem !important;
   }
   .glass-panel {
-    padding: 0.5rem !important;
+    padding: 0.4rem !important;
+    gap: 0.4rem !important;
   }
   .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-  .card-img {
-    height: 70%;
-  }
-  .card-text {
-    height: 30%;
+    padding: 6px 12px;
     font-size: 0.8rem;
   }
+  .hint-slot {
+    min-height: 60px !important;
+  }
+  .word-tile {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  .word-pool {
+    margin-bottom: 0.5rem !important;
+  }
+  img {
+    width: 50px !important;
+    height: 50px !important;
+  }
   h3 {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     margin-bottom: 0.2rem !important;
   }
 }
 
-/* 소설가 화면 메인 영역 */
-.novelist-main-area {
-  display: flex;
-  gap: 2rem;
-  align-items: stretch;
-  height: calc(100vh - 200px);
-  min-height: 500px;
-}
+
