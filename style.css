@@ -385,12 +385,23 @@ h1, h2, h3, .btn, .font-title {
   color: var(--text-secondary);
 }
 
-/* 16:9 반응형 탐정 뷰 보드 */
+/* 16:9 반응형 보드판 컨테이너 제한 */
+.game-board-container {
+  width: 100%;
+  max-width: calc((100vh - 60px) * 1.777); /* 세로 공간을 초과하지 않도록 max-width 계산 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .game-board {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('게임 배경화면.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bg_board.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -431,21 +442,44 @@ h1, h2, h3, .btn, .font-title {
   cursor: default;
 }
 
-.game-board-container {
-  width: 100%;
-  max-width: 1300px; /* Limit max size on huge screens */
-  margin: 0 auto;
-  position: relative;
-  padding-bottom: 60px; /* space for the absolute submit button */
+/* 미디어 쿼리: 모바일 가로 모드 최적화 */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .view {
+    padding: 1rem;
+    min-height: 100vh;
+  }
+  .novelist-main-area {
+    min-height: auto;
+    height: 100%;
+  }
+  .turn-indicator {
+    font-size: 1.2rem;
+  }
+  .glass-panel {
+    padding: 0.5rem !important;
+  }
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .card-img {
+    height: 70%;
+  }
+  .card-text {
+    height: 30%;
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.2rem !important;
+  }
 }
 
-.board-action-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* 소설가 화면 메인 영역 */
+.novelist-main-area {
   display: flex;
-  justify-content: center;
-  padding: 10px;
-  z-index: 10;
+  gap: 2rem;
+  align-items: stretch;
+  height: calc(100vh - 200px);
+  min-height: 500px;
 }

@@ -153,7 +153,7 @@ function createNovelistView() {
       <button class="btn btn-primary" id="btn-submit-hint" style="font-size:1.1rem; padding: 12px 30px;">힌트 제출 완료</button>
     </div>
     
-    <div style="display: flex; gap: 2rem; align-items: stretch; height:calc(100vh - 200px); min-height: 500px;">
+    <div class="novelist-main-area">
       <!-- 왼쪽 패널 (정답 및 힌트 슬롯) -->
       <div class="glass-panel" style="flex: 1.8; padding: 1.5rem; display:flex; flex-direction:column; gap: 1rem; overflow-y:auto;">
         <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.3rem;">사건의 진상</h3>

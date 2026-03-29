@@ -2,295 +2,295 @@ const GameData = {
   "killers": [
     {
       "name": "농부",
-      "file": "용의자/농부.png"
+      "file": "suspects/01.png"
     },
     {
       "name": "교사",
-      "file": "용의자/교사.png"
+      "file": "suspects/02.png"
     },
     {
       "name": "외교관",
-      "file": "용의자/외교관.png"
+      "file": "suspects/03.png"
     },
     {
       "name": "정치인",
-      "file": "용의자/정치인.png"
+      "file": "suspects/04.png"
     },
     {
       "name": "가수",
-      "file": "용의자/가수.png"
+      "file": "suspects/05.png"
     },
     {
       "name": "작곡가",
-      "file": "용의자/작곡가.png"
+      "file": "suspects/06.png"
     },
     {
       "name": "음악가",
-      "file": "용의자/음악가.png"
+      "file": "suspects/07.png"
     },
     {
       "name": "마약상",
-      "file": "용의자/마약상.png"
+      "file": "suspects/08.png"
     },
     {
       "name": "사기꾼",
-      "file": "용의자/사기꾼.png"
+      "file": "suspects/09.png"
     },
     {
       "name": "깡패",
-      "file": "용의자/깡패.png"
+      "file": "suspects/10.png"
     },
     {
       "name": "바텐더",
-      "file": "용의자/바텐더.png"
+      "file": "suspects/11.png"
     },
     {
       "name": "시인",
-      "file": "용의자/시인.png"
+      "file": "suspects/12.png"
     },
     {
       "name": "복서",
-      "file": "용의자/복서.png"
+      "file": "suspects/13.png"
     },
     {
       "name": "배우",
-      "file": "용의자/배우.png"
+      "file": "suspects/14.png"
     },
     {
       "name": "변호사",
-      "file": "용의자/변호사.png"
+      "file": "suspects/15.png"
     },
     {
       "name": "간호사",
-      "file": "용의자/간호사.png"
+      "file": "suspects/16.png"
     },
     {
       "name": "정비사",
-      "file": "용의자/정비사.png"
+      "file": "suspects/17.png"
     },
     {
       "name": "소방관",
-      "file": "용의자/소방관.png"
+      "file": "suspects/18.png"
     },
     {
       "name": "아이돌",
-      "file": "용의자/아이돌.png"
+      "file": "suspects/19.png"
     },
     {
       "name": "미용사",
-      "file": "용의자/미용사.png"
+      "file": "suspects/20.png"
     },
     {
       "name": "신문 기자",
-      "file": "용의자/신문 기자.png"
+      "file": "suspects/21.png"
     },
     {
       "name": "개그우먼",
-      "file": "용의자/개그우먼.png"
+      "file": "suspects/22.png"
     },
     {
       "name": "군인",
-      "file": "용의자/군인.png"
+      "file": "suspects/23.png"
     },
     {
       "name": "경호원",
-      "file": "용의자/경호원.png"
+      "file": "suspects/24.png"
     },
     {
       "name": "사진작가",
-      "file": "용의자/사진작가.png"
+      "file": "suspects/25.png"
     },
     {
       "name": "탐험가",
-      "file": "용의자/탐험가.png"
+      "file": "suspects/26.png"
     },
     {
       "name": "유튜버",
-      "file": "용의자/유튜버.png"
+      "file": "suspects/27.png"
     },
     {
       "name": "영화감독",
-      "file": "용의자/영화감독.png"
+      "file": "suspects/28.png"
     },
     {
       "name": "트레이너",
-      "file": "용의자/트레이너.png"
+      "file": "suspects/29.png"
     },
     {
       "name": "의사",
-      "file": "용의자/의사.png"
+      "file": "suspects/30.png"
     },
     {
       "name": "수영선수",
-      "file": "용의자/수영선수.png"
+      "file": "suspects/31.png"
     },
     {
       "name": "건축가",
-      "file": "용의자/건축가.png"
+      "file": "suspects/32.png"
     }
   ],
   "motives": [
     {
       "name": "층간소음",
-      "file": "동기/층간소음.png"
+      "file": "motives/01.png"
     },
     {
       "name": "과음",
-      "file": "동기/과음.png"
+      "file": "motives/02.png"
     },
     {
       "name": "시기",
-      "file": "동기/시기.png"
+      "file": "motives/03.png"
     },
     {
       "name": "불륜",
-      "file": "동기/불륜.png"
+      "file": "motives/04.png"
     },
     {
       "name": "빚",
-      "file": "동기/빚.png"
+      "file": "motives/05.png"
     },
     {
       "name": "재미",
-      "file": "동기/재미.png"
+      "file": "motives/06.png"
     },
     {
       "name": "청부살인",
-      "file": "동기/청부살인.png"
+      "file": "motives/07.png"
     },
     {
       "name": "배신",
-      "file": "동기/배신.png"
+      "file": "motives/08.png"
     },
     {
       "name": "마약중독",
-      "file": "동기/마약중독.png"
+      "file": "motives/09.png"
     },
     {
       "name": "도박",
-      "file": "동기/도박.png"
+      "file": "motives/10.png"
     },
     {
       "name": "강도",
-      "file": "동기/강도.png"
+      "file": "motives/11.png"
     },
     {
       "name": "욕설",
-      "file": "동기/욕설.png"
+      "file": "motives/12.png"
     },
     {
       "name": "이간질",
-      "file": "동기/이간질.png"
+      "file": "motives/13.png"
     },
     {
       "name": "유산",
-      "file": "동기/유산.png"
+      "file": "motives/14.png"
     },
     {
       "name": "식탐",
-      "file": "동기/식탐.png"
+      "file": "motives/15.png"
     },
     {
       "name": "스토킹",
-      "file": "동기/스토킹.png"
+      "file": "motives/16.png"
     },
     {
       "name": "집착",
-      "file": "동기/집착.png"
+      "file": "motives/17.png"
     },
     {
       "name": "협박",
-      "file": "동기/협박.png"
+      "file": "motives/18.png"
     }
   ],
   "weapons": [
     {
       "name": "수면제",
-      "file": "도구/수면제.png"
+      "file": "weapons/01.png"
     },
     {
       "name": "뱀",
-      "file": "도구/뱀.png"
+      "file": "weapons/02.png"
     },
     {
       "name": "담배",
-      "file": "도구/담배.png"
+      "file": "weapons/03.png"
     },
     {
       "name": "화분",
-      "file": "도구/화분.png"
+      "file": "weapons/04.png"
     },
     {
       "name": "곰인형",
-      "file": "도구/곰인형.png"
+      "file": "weapons/05.png"
     },
     {
       "name": "햄버거",
-      "file": "도구/햄버거.png"
+      "file": "weapons/06.png"
     },
     {
       "name": "립스틱",
-      "file": "도구/립스틱.png"
+      "file": "weapons/07.png"
     },
     {
       "name": "드릴",
-      "file": "도구/드릴.png"
+      "file": "weapons/08.png"
     },
     {
       "name": "쇼핑백",
-      "file": "도구/쇼핑백.png"
+      "file": "weapons/09.png"
     },
     {
       "name": "가방",
-      "file": "도구/가방.png"
+      "file": "weapons/10.png"
     },
     {
       "name": "손전등",
-      "file": "도구/손전등.png"
+      "file": "weapons/11.png"
     },
     {
       "name": "고춧가루",
-      "file": "도구/고춧가루.png"
+      "file": "weapons/12.png"
     },
     {
       "name": "주전자",
-      "file": "도구/주전자.png"
+      "file": "weapons/13.png"
     },
     {
       "name": "변기",
-      "file": "도구/변기.png"
+      "file": "weapons/14.png"
     },
     {
       "name": "우산",
-      "file": "도구/우산.png"
+      "file": "weapons/15.png"
     },
     {
       "name": "코트",
-      "file": "도구/코트.png"
+      "file": "weapons/16.png"
     },
     {
       "name": "만년필",
-      "file": "도구/만년필.png"
+      "file": "weapons/17.png"
     },
     {
       "name": "시계",
-      "file": "도구/시계.png"
+      "file": "weapons/18.png"
     },
     {
       "name": "세탁기",
-      "file": "도구/세탁기.png"
+      "file": "weapons/19.png"
     },
     {
       "name": "휘발유",
-      "file": "도구/휘발유.png"
+      "file": "weapons/20.png"
     },
     {
       "name": "휴지통",
-      "file": "도구/휴지통.png"
+      "file": "weapons/21.png"
     },
     {
       "name": "냉장고",
-      "file": "도구/냉장고.png"
+      "file": "weapons/22.png"
     }
   ],
   "adjectives": [
@@ -406,14 +406,3 @@ const GameData = {
     "일기"
   ]
 };
-
-// Array 셔플 유틸리티 함수
-function shuffle(array) {
-  let currentIndex = array.length, randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-  return array;
-}
